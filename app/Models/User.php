@@ -77,4 +77,8 @@ public function sendEmailVerificationNotification()
     // Questo sposta l'invio in coda invece di farlo subito
     $this->notify((new \App\Notifications\MyVerifyEmail)->delay(now()->addSeconds(5)));
 }
+
+public function ticket(){
+    return $this->hasMany(WebSocketTicket::class);
+}
 }

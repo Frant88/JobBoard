@@ -124,6 +124,9 @@
                 <a class="nav-link active" href="{{ route ('listings.candidate.show') }}">Annunci</a>
             </li>
         @endif
+          <li class="nav-item">
+                <a class="nav-link active" href="{{ route ('chats') }}">Chat</a>
+            </li>
             <li class="nav-item">
                 <form action="{{ route('logout') }}" method="POST" class="d-inline">
                     @csrf

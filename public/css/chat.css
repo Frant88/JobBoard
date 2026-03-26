@@ -1,0 +1,145 @@
+ /* Layout Principale */
+    .messaging-wrapper {
+        display: flex;
+        height: 85vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        border: 1px solid #ddd;
+    }
+
+    /* Sidebar Contatti */
+    .contacts-sidebar {
+        width: 30%;
+        background: white;
+        border-right: 1px solid #ddd;
+        overflow-y: auto;
+    }
+
+    .sidebar-header {
+        padding: 20px;
+        background: #f0f2f5;
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+    }
+
+    .contact-item {
+        padding: 15px 20px;
+        border-bottom: 1px solid #f0f0f0;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .contact-item:hover {
+        background-color: #f5f6f6;
+    }
+
+    /* Finestra Chat */
+    .chat-window {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        background-color: #e5ddd5; /* Colore sfondo WhatsApp */
+    }
+
+    .chat-header {
+        padding: 15px 20px;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+    }
+
+    /* Area Messaggi - IL CUORE DEL FIX */
+    #chat-messages {
+        flex-grow: 1;
+        overflow-y: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column; /* Fondamentale per allineare le bolle */
+        gap: 12px;              /* Spazio tra un messaggio e l'altro */
+    }
+
+    /* Bolle Messaggi */
+    .bubble {
+        max-width: 65%;
+        padding: 8px 14px;
+        font-size: 14.5px;
+        line-height: 1.4;
+        position: relative;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        word-wrap: break-word;
+        display: flex;
+    flex-direction: column;
+    }
+
+    .received {
+        align-self: flex-start;
+        background-color: #ffffff;
+        border-radius: 0 12px 12px 12px;
+    }
+
+    .sent {
+        align-self: flex-end;   /* Sposta la bolla a DESTRA */
+        background-color: #dcf8c6;
+        border-radius: 12px 0 12px 12px;
+    }
+
+    /* Area Input */
+    .input-area {
+        padding: 15px;
+        background: #f0f2f5;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .input-area input {
+        flex-grow: 1;
+        padding: 12px;
+        border: 1px solid #fff;
+        border-radius: 8px;
+        outline: none;
+    }
+
+    .btn-send {
+        padding: 10px 20px;
+        background: #008069;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .placeholder-text {
+        margin: auto;
+        text-align: center;
+        color: #888;
+    }
+    /* Stile per il testo dentro la bolla per allineare le spunte */
+.bubble p {
+    margin: 0;
+    display: inline-block; /* Permette alle spunte di stare accanto al testo */
+    position: relative;
+    padding-right: 25px; /* Spazio per non sovrapporre il testo alle spunte */
+}
+
+/* Stile base delle spunte */
+.ticks {
+    font-size: 0.75em;
+    position: absolute;
+    bottom: -2px;
+    right: -5px;
+    color: #999; /* Grigio per messaggio inviato (singola spunta) */
+    user-select: none;
+}
+
+/* Colore Blu per quando il messaggio è letto */
+.ticks.read {
+    color: #34b7f1; /* Azzurro WhatsApp */
+}
+
+/* Effetto al passaggio del mouse sulla sidebar per capire quale chat è attiva (Opzionale) */
+.contact-item.active {
+    background-color: #ebebeb;
+    border-left: 4px solid #008069;
+}

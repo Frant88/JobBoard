@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\chat\ChatController;
 use App\Http\Controllers\Dashboard\CandidateDashboardController;
 use App\Http\Controllers\Dashboard\EmployerDashboardController;
 use App\Http\Controllers\Dashboard\RedirectDashboardController;
@@ -54,6 +55,9 @@ Route::middleware('auth')->group(function(){
 
     //listings
         Route::get('/listings/{listing:slug}',[ListingsController::class,'show'])->name('listing.show');
+
+    //Chat
+        Route::get('/chats', [ChatController::class, "index"])->name("chats");
 
     
     Route::middleware('employer')->group(function(){
