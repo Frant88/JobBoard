@@ -8,7 +8,6 @@
 * **Database:** MySQL / PostgreSQL
 * **API:** RESTful endpoints integrati per la gestione dinamica dei dati
 
-
 ### Dinamismo con Vanilla JS
 Per garantire velocità e leggerezza, ho implementato le logiche client-side in puro JavaScript, evitando l'uso di framework pesanti:
 * **Smart Search & Suggestions:** I campi di ricerca per *Località* (negli annunci) e *Categoria* (nel form di creazione) utilizzano la `Fetch API` per interrogare gli endpoint API, offrendo suggerimenti dinamici e filtri univoci basati sui dati reali.
