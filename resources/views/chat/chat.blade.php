@@ -48,10 +48,10 @@
         isWindowFocused = true;
         console.log("Tab attiva: invio segnale di lettura...");
         
-        // Se c'è una chat aperta, segna tutto come letto
+        
         if (currentRecipientId) {
             ChatModule.markAsReadSocket(currentRecipientId, mioTicket);
-            ChatModule.markAsRead(currentRecipientId, mioTicket); // Aggiorna anche il DB
+            ChatModule.markAsRead(currentRecipientId, mioTicket); 
         }
     } else {
         isWindowFocused = false;
@@ -62,7 +62,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         ChatModule.connect(mioTicket);
        
-        // Invio con tasto Enter
+        
         document.getElementById('userInput').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') inviaMessaggio();
         });

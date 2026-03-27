@@ -5,7 +5,7 @@ const ChatModule = {
 
     // 1. Funzione per connettersi
     connect: function(ticket) {
-        // Creiamo la connessione base con SockJS (senza ticket nell'URL!)
+        // Creiamo la connessione base con SockJS 
         this.socket = new SockJS('http://localhost:8080/ws-messaging');
         this.stompClient = Stomp.over(this.socket);
         this.mioTicket= ticket;
@@ -102,7 +102,7 @@ const ChatModule = {
     const allTicks = document.querySelectorAll('.ticks:not(.read)');
     allTicks.forEach(tick => {
         tick.classList.add('read');
-        tick.innerHTML = '✔✔'; // Diventa doppia spunta
+        tick.innerHTML = '✔✔'; 
     });
 }
 };
