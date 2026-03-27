@@ -27,6 +27,16 @@ Per garantire velocità e leggerezza, ho implementato le logiche client-side in 
 4.  **Applications:** Tabella pivot con tracking degli stati (`pending`, `accepted`, `rejected`).
 5.  **Categories & Skills:** Organizzazione e classificazione granulare dei contenuti.
 
+## Architettura a Microservizi
+
+Per garantire performance elevate e scalabilità nella messaggistica in tempo reale, questa piattaforma si appoggia a un microservizio esterno:
+
+* **Chat Service**: [JobBoard Chat Service](https://github.com/Frant88/JobBoard-Chat-Service)
+    * **Tecnologia**: Java 17, Spring Boot 3, WebSocket (STOMP).
+    * **Integrazione**: Laravel genera un `Ticket` univoco nel database; il microservizio Java lo valida per autorizzare la connessione WebSocket.
+
+---
+
 ## Installazione Rapida
 
 1.  **Clonazione e dipendenze:**
@@ -53,3 +63,8 @@ Per garantire velocità e leggerezza, ho implementato le logiche client-side in 
 **Francesco Casaluce**
 * **Focus:** Full-Stack Development | Laravel Specialist
 * **PHP Version:** 8.4.6
+
+## Licenza
+Questo progetto è distribuito sotto licenza MIT. Vedi il file [LICENSE](LICENSE) per i dettagli.
+
+Copyright (c) 2026 Francesco Casaluce
